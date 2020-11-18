@@ -5,7 +5,7 @@ resources:
       gitProvider: firstGitHub             # Change to your integration
       path: raksha78/pipeTest                 # Change to your repo
 pipelines:
-  - name: pipeline_hello_world
+  - name: my_pipeline_hello_world
     configuration:
       environmentVariables:
         readOnly:
