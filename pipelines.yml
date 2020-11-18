@@ -1,4 +1,9 @@
-               # Change to your repo
+resources:
+  - name: myAppRepo
+    type: GitRepo
+    configuration:
+      gitProvider: firstGitHub             # Change to your integration
+      path: raksha78/pipeTest  
 pipelines:
   - name: my_pipeline_hello_world
     configuration:
