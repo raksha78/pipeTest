@@ -43,6 +43,8 @@ pipelines:
           onExecute:
             - echo $MY_MESSAGE
             - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
+            - echo $res_myAppRepo_gitProvider_name
+            - echo $res_myAppRepo1_gitProvider_name
  
       - name: step_3
         type: Bash
