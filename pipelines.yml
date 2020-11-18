@@ -8,7 +8,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: myBB               # Change to your integration
-      path: rakshithagr/pipelinesTest 
+      path: ~rakshithagr/pipelinesTest 
 pipelines:
   - name: my_pipeline_hello_world
     configuration:
