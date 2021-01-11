@@ -1,9 +1,9 @@
-# resources:
-#   - name: myAppRepo
-#     type: GitRepo
-#     configuration:
-#       gitProvider: raksh_github             # Change to your integration
-#       path: raksha78/pipeTest  
+resources:
+  - name: myAppRepo
+    type: GitRepo
+    configuration:
+      gitProvider: raksha78_github             # Change to your integration
+      path: raksha78/pipeTest  
 pipelines:
   - name: my_pipeline_hello_world
     configuration:
@@ -13,9 +13,9 @@ pipelines:
     steps:
       - name: step_1
         type: Bash
-#         configuration:
-#           inputResources:
-#             - name: myAppRepo
+        configuration:
+          inputResources:
+            - name: myAppRepo
         execution:
           onExecute:
             - echo $MY_MESSAGE
