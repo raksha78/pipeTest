@@ -8,7 +8,7 @@ pipelines:
   - name: my_pipeline_hello_world_16
     configuration:
 #       nodePool: c8dynamic
-      nodePool: u18dynamic
+      nodePool: u16dynamic
       environmentVariables:
         readOnly:
           MY_MESSAGE: '"Hello World!"'
