@@ -1,21 +1,21 @@
 resources:
-  - name: myAppRepo
+  - name: myAppRepo1
     type: GitRepo
     configuration:
       gitProvider: raksha78_github             # Change to your integration
       path: raksha78/pipeTest  
 pipelines:
-  - name: my_pipeline_hello_world
+  - name: my_pipeline_hello_world_1
     configuration:
       environmentVariables:
         readOnly:
           MY_MESSAGE: '"Hello World!"'
     steps:
-      - name: step_1
+      - name: step
         type: Bash
         configuration:
           inputResources:
-            - name: myAppRepo
+            - name: myAppRepo1
         execution:
           onExecute:
             - echo $MY_MESSAGE
