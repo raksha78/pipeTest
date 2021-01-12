@@ -1,0 +1,23 @@
+resources:
+  - name: myAppRepo2
+    type: GitRepo
+    configuration:
+      gitProvider: raksha78_github             # Change to your integration
+      path: raksha78/pipeTest  
+pipelines:
+  - name: my_pipeline_hello_world_3
+    configuration:
+#       nodePool: c8dynamic
+      nodePool: u18dynamic
+      environmentVariables:
+        readOnly:
+          MY_MESSAGE: '"Hello World!"'
+    steps:
+      - name: step_001
+        type: Bash
+        configuration:
+          inputResources:
+            - name: myAppRepo2
+        execution:
+          onExecute:
+            - echo $MY_MESSAGE
