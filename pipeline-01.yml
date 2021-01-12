@@ -21,6 +21,6 @@ pipelines:
         execution:
           onExecute:
             - echo $MY_MESSAGE
-            - sleep
+#             - sleep
  
      
