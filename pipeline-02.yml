@@ -5,7 +5,7 @@ resources:
       gitProvider: raksha78_github             # Change to your integration
       path: raksha78/pipeTest  
 pipelines:
-  - name: my_pipeline_hello_world_1
+  - name: my_pipeline_hello_world_16
     configuration:
       environmentVariables:
         readOnly:
