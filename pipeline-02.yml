@@ -8,7 +8,7 @@ pipelines:
   - name: my_pipeline_hello_world_16
     configuration:
 #       nodePool: c8dynamic
-      nodePool:  u20DynTest
+      nodePool:  u16dynamic_04
       environmentVariables:
         readOnly:
           MY_MESSAGE: '"Hello World!"'
@@ -21,5 +21,5 @@ pipelines:
         execution:
           onExecute:
             - echo $MY_MESSAGE
-            - sleep 15m
+#             - sleep 15m
  
