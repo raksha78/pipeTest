@@ -7,7 +7,7 @@
 pipelines:
   - name: my_pipeline_hello_world_18
     configuration:
-#       nodePool: u16dynamic
+      nodePool: u18dynamic
 #       nodePool: c8dynamic
       environmentVariables:
         readOnly:
