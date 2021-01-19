@@ -5,19 +5,25 @@ resources:
       gitProvider: raksha78_github             # Change to your integration
       path: raksha78/pipeTest  
 pipelines:
-  - name: my_pipeline_hello_world_02
-    configuration:
-#       nodePool: c8dynamic
-      nodePool:  u16dynamic_01
-      environmentVariables:
-        readOnly:
-          MY_MESSAGE: '"Hello World!"'
+  - name: pipe_test
     steps:
-      - name: step_001
+      - name: step_check
         type: Bash
         configuration:
           inputResources:
             - name: myAppRepo2
+          integrations:
+            - name: slack_extension
+            - name: art_v
+            - name: bb_extension
+            - name: bbs_extension
+            - name: DR_extension
+            - name: GC_extension
+            - name: generic_extension
+            - name: gL_extension
+            - name: git_v
+            - name: Kuber_extension
         execution:
           onExecute:
-            - echo $MY_MESSAGE
+            - printenv
+            - ls
