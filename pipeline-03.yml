@@ -16,7 +16,7 @@ pipelines:
             - name: slack_extension
             - name: art_v
             - name: bb_extension
-            - name: bbs_extension
+            - name: raksha78_bbs
             - name: DR_extension
             - name: GC_extension
             - name: generic_extension
