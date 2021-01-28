@@ -5,10 +5,8 @@ resources:
       gitProvider: raksha78_github             # Change to your integration
       path: raksha78/pipeTest  
 pipelines:
-  - name: my_pipeline_hello_world_01
+  - name: my_pipeline
     configuration:
-#       nodePool: c8dynamic
-      nodePool:  u16dynamic_03
       environmentVariables:
         readOnly:
           MY_MESSAGE: '"Hello World!"'
