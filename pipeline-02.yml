@@ -1,23 +1,46 @@
+# resources:
+#   - name: myAppRepo1
+#     type: GitRepo
+#     configuration:
+#       gitProvider: raksha78_github             # Change to your integration
+#       path: raksha78/pipeTest  
+# pipelines:
+#   - name: my_pipeline
+#     configuration:
+#       environmentVariables:
+#         readOnly:
+#           MY_MESSAGE: '"Hello World!"'
+#     steps:
+#       - name: step
+#         type: Bash
+#         configuration:
+#           inputResources:
+#             - name: myAppRepo1
+#         execution:
+#           onExecute:
+#             - echo $MY_MESSAGE
+# #             - sleep 15m
+ 
 resources:
-  - name: myAppRepo1
-    type: GitRepo
+
+  - name: S_PS_R_FLSPEC_0002_FileSpec
+    type: FileSpec
     configuration:
-      gitProvider: raksha78_github             # Change to your integration
-      path: raksha78/pipeTest  
+      sourceArtifactory: s_artifactory
+      pattern: "example-repo-local/setup/test.sh"
+      recursive: false
+
 pipelines:
-  - name: my_pipeline
-    configuration:
-      environmentVariables:
-        readOnly:
-          MY_MESSAGE: '"Hello World!"'
+
+  - name: pipelines_S_PS_R_FLSPEC_0002
     steps:
-      - name: step
-        type: Bash
+      - name: S_PS_R_FLSPEC_0002
+        type: PowerShell
         configuration:
+          nodePool: win_2019
           inputResources:
-            - name: myAppRepo1
+            - name: S_PS_R_FLSPEC_0002_FileSpec
+              trigger: false
         execution:
           onExecute:
-            - echo $MY_MESSAGE
-#             - sleep 15m
- 
+            - write-output "executing step..."
