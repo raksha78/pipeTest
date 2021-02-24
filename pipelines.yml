@@ -2,12 +2,12 @@ resources:
   - name: myAppRepo
     type: GitRepo
     configuration:
-      gitProvider: firstGitHub             # Change to your integration
+      gitProvider: raksha78_github             # Change to your integration
       path: raksha78/pipeTest  
   - name: myAppRepo1
     type: GitRepo
     configuration:
-      gitProvider: myBB               # Change to your integration
+      gitProvider: raksha78_bbs              # Change to your integration
       path: ~rakshithagr/pipelinesTest 
 pipelines:
   - name: my_pipeline_hello_world
